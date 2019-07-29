@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get Set Object HTML</title>
+</head>
+
+<body>
+    <h1>Tính Tổng Hai Số</h1>
+    <input type="number" id="Th_no1">
+    <input type="number" id="Th_no2">
+
+
+    <button id="Th_Xu_ly">Tính Tổng</button>
+
+
+    <script>
+        Th_Xu_ly.onclick = () => {
+            var sum, a, b;
+            a= Number(Th_no1.value);
+            b=Number(Th_no2.value);
+            sum=a+b;
+            Th_DIV.innerHTML=sum;
+            //Th_DIV.innerHTML = parseInt(Th_no1.value) + parseInt(Th_no2.value);
+            //Th_DIV.innerHTML = Number(Th_no1.value) + Number(Th_no2.value);
+            //alert(dsMon);
+            /*
+            Th_DIV.style.cssText="color:red";
+            Th_DIV.innerHTML=Th_Text.value;
+            console.log(Th_DIV.innerHTML)
+            */
+            console.log(Th_DIV.innerHTML);
+        }
+    </script>
+    <div id="Th_DIV">Tổng hai số</div>
+</body>
+
+</html>

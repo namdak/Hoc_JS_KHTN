@@ -1,0 +1,7 @@
+lưu ý:
+thẻ, element, tag: div, a, p, h1 
+<div class="tieu_de" style=""> thuộc tính: attribute 
+dùng ngôn ngũ Javascript_lấy thẻ -> đối tượng (object) theo thuộc tính ID 
+Get/set value in ID 
+Tag: input, select, textarea => value 
+các tag khác --- innerHTML 
