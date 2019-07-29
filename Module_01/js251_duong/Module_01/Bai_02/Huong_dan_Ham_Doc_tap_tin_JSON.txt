@@ -1,0 +1,56 @@
+﻿b1 
+Du_lieu_Luu_tru
+Tạo tập tin ho_ten.json 
+{
+    "ho_ten":"Trần Thị Bé Lớn"
+}
+
+b2
+Xu_ly/Xu_ly_3L.js
+Tạo hàm 
+function Doc_Du_lieu_Ho_ten_JSON(){
+    var Tap_tin=`ho_ten.json`
+    var Dia_chi_Xu_ly=`${Duong_dan_Du_lieu}/${Tap_tin}`
+    var Xu_ly_HTTP=new XMLHttpRequest()
+    Xu_ly_HTTP.open(`GET`,`${Dia_chi_Xu_ly}`,false) 
+    Xu_ly_HTTP.send()
+    var Chuoi_ket_qua=Xu_ly_HTTP.responseText.trim() // Nội dung trả về
+    return Chuoi_ket_qua
+}
+
+
+b3 MH_Doc_Xuat_Tach_chuoi_JSON.html
+
+<script src="../Xu_ly/Xu_ly_3L.js"></script>
+    <script>
+        Th_Dong_y.onclick=()=>{
+            var chuoi_json=Doc_Du_lieu_Ho_ten_JSON();
+            console.log(chuoi_json);
+            Th_Ho_ten.value=chuoi_json;
+            // Chuyển chuỗi json -> đối tượng
+            var Doi_tuong=JSON.parse(chuoi_json);
+            console.log(Doi_tuong.ho_ten);
+            // 
+            var Chuoi_Ho_ten = Doi_tuong.ho_ten;
+            // Kiểm tra
+            var Hop_le = Chuoi_Ho_ten.trim() != ""
+            if (Hop_le) {
+                Th_Thong_bao.innerHTML = `Dữ liệu hợp lệ`
+                Chuoi_Ho_ten=Chuan_hoa_chuoi(Chuoi_Ho_ten);
+                // Tính toán
+                var vi_tri_dau = Chuoi_Ho_ten.indexOf(" ")
+                var Chuoi_Ho = Chuoi_Ho_ten.substr(0, vi_tri_dau).trim()
+                var vi_tri_cuoi = Chuoi_Ho_ten.lastIndexOf(" ")
+                var Chuoi_Ten = Chuoi_Ho_ten.substr(vi_tri_cuoi).trim()
+                var Chuoi_Ho_Lot = Chuoi_Ho_ten.substr(vi_tri_dau, Chuoi_Ho_ten.length - (Chuoi_Ho.length + Chuoi_Ten.length)).trim()
+                // Xuất
+                Th_Ho.innerHTML = `Họ: ${Chuoi_Ho}`
+                Th_Ten.innerHTML = `Tên: ${Chuoi_Ten}`
+                Th_Ho_Lot.innerHTML = Chuoi_Ho_Lot != `` ? `Họ lót: ${Chuoi_Ho_Lot}` : ``
+            } else {
+                Th_Thong_bao.innerHTML = `Nhập họ tên của bạn`
+                Th_Ho_ten.focus()
+            }
+        }
+    </script>
+

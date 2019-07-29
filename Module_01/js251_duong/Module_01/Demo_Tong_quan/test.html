@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xuất Cửu Chương</title>
+</head>
+
+<body>
+    <p>Nhập số cửu chương:
+        <input type="text" id="Th_So_CC">
+        <button id="Th_Dong_y">Xuất bảng cửu chương</button>
+    </p>
+    <div id="Th_Kq"></div>
+    <script src="js/thu_vien.js"></script>
+    <script>
+        /*
+
+        */
+        var chuoi="Hello"
+        var phai=true
+        var so_nguyen=1.1
+        var doi_tuong={}
+        var danh_sach=[]
+
+        var zyx
+        console.log(typeof(zyx))
+        
+
+        Th_Dong_y.onclick = () => {
+            var so=Number(Th_So_CC.value)
+            var str=Bang_cuu_chuong(so)
+            //console.log(typeof(tong))
+            //console.log(str)
+            Th_Kq.innerHTML=str
+        }
+
+    </script>
+
+</body>
+
+</html>

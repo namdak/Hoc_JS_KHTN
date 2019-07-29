@@ -1,0 +1,50 @@
+// MH_Tach_chuoi.html
+<script>
+
+
+        Th_Dong_y.onclick = () => {
+
+            // Nhập
+            var Chuoi_Ho_ten = Th_Ho_ten.value.trim()
+            // Kiểm tra
+            var Hop_le = Chuoi_Ho_ten.trim() != ""
+            if (Hop_le) {
+                Th_Thong_bao.innerHTML = `Dữ liệu hợp lệ`
+                // Tính toán
+                Chuoi_Ho_ten=Chuan_hoa_chuoi(Chuoi_Ho_ten);
+                var vi_tri_dau = Chuoi_Ho_ten.indexOf(" ")
+                var Chuoi_Ho = Chuoi_Ho_ten.substr(0, vi_tri_dau).trim()
+                var vi_tri_cuoi = Chuoi_Ho_ten.lastIndexOf(" ")
+                var Chuoi_Ten = Chuoi_Ho_ten.substr(vi_tri_cuoi).trim()
+                var Chuoi_Ho_Lot = Chuoi_Ho_ten.substr(vi_tri_dau, Chuoi_Ho_ten.length - (Chuoi_Ho.length + Chuoi_Ten.length)).trim()
+                // Xuất
+                Th_Ho.innerHTML = `Họ: ${Chuoi_Ho}`
+                Th_Ten.innerHTML = `Tên: ${Chuoi_Ten}`
+                Th_Ho_Lot.innerHTML = Chuoi_Ho_Lot != `` ? `Họ lót: ${Chuoi_Ho_Lot}` : ``
+            } else {
+                Th_Thong_bao.innerHTML = `Nhập họ tên của bạn`
+                Th_Ho_ten.focus()
+            }
+        }
+
+        function Chuan_hoa_chuoi(chuoi) {
+            chuoi_tam = chuoi.trim();
+            do {
+                chuoi_tam = chuoi_tam.replace("  ", " ");
+                var vt = chuoi_tam.indexOf("  ");
+            } while (vt >= 0)
+            return chuoi_tam
+        }
+
+        
+        /*
+        var chuoi = "a    b    c    d";
+        console.log(chuoi.length);
+        chuoi=Chuan_hoa_chuoi(chuoi);
+        console.log(chuoi.length);
+        */
+        
+    </script>
+
+    
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get Set Object HTML</title>
+</head>
+
+<body>
+    
+    <input type="text" id="Th_Text">
+    <div id="Th_DIV">Chào cả nhà</div>
+    <select id="dsMon">
+        <option value="1">C#</option>
+        <option value="2">PHP</option>
+        <option value="3">NodeJS</option>
+    </select>
+    <button id="Th_Xu_ly">Xử lý</button>
+
+    <script>
+        Th_Xu_ly.onclick = () => {
+            alert(dsMon);
+            /*
+            Th_DIV.style.cssText="color:red";
+            Th_DIV.innerHTML=Th_Text.value;
+            console.log(Th_DIV.innerHTML)
+            */
+            console.log(dsMon.value)
+        }
+    </script>
+</body>
+
+</html>
